@@ -36,8 +36,8 @@ module AXI_Master(
     //Next state logic for FSM
     //If 'newd' is asserted (new data ready), move to TX (transmit) state Otherwise, stay in IDLE
     //If 'tready' is high (slave ready to accept data):
-    //    If count is not yet 4, stay in TX (continue transmitting)
-    //    If count reaches 4, go back to IDLE (transfer complete)
+    //    If count is not yet 3, stay in TX (continue transmitting)
+    //    If count reaches 3, go back to IDLE (transfer complete)
     //    If 'tready' is low, remain in TX (wait until ready)
     always@(*) begin
         case(ps)
